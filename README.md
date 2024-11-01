@@ -9,13 +9,17 @@ An AI-integrated business management solution built with:
 ### Frontend
 \`\`\`bash
 cd frontend
+
 npm install
+
 npm run dev
 \`\`\`
 
 ### Backend
 \`\`\`bash
 cd backend
+
 npm install
-npm run dev
+
+npm start
 \`\`\`
