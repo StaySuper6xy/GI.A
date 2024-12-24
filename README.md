@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Gia - AI Integrated Business Management Solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gia is an all-in-one AI-integrated business management solution built with Node.js, MongoDB, and React. It provides a comprehensive platform for managing various aspects of your business with the help of AI assistants.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User authentication (register, login, logout)
+- Dashboard with AI-powered assistants:
+  - Filly: Financial advisor
+  - Marcus: Marketing strategist
+  - Sally: Sales expert
+  - Dan: Data analyst
+- Responsive design with a modern UI
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Frontend: React, React Router, Axios
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- State Management: React Hooks
+- Styling: CSS with custom variables
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or later)
+- MongoDB
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+2. Navigate to the backend directory and run `npm install`
+3. Set up environment variables:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   For the backend:
+   Create a `.env` file in the `backend` directory and add the following:
+   \`\`\`
+   MONGODB_URI=your_mongodb_uri_here
+   JWT_SECRET=your_jwt_secret_here
+   PORT=5000
+   \`\`\`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   For the frontend:
+   Create a `.env` file in the `frontend` directory and add the following:
+   \`\`\`
+   REACT_APP_API_URL=http://localhost:5000
+   \`\`\`
 
-### `npm run eject`
+## Environment Variables
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `MONGODB_URI`: Your MongoDB connection string
+- `JWT_SECRET`: A secret key for JWT token generation
+- `PORT`: The port on which the backend server will run (default: 5000)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `REACT_APP_API_URL`: The URL of your backend API (default: http://localhost:5000)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Make sure to replace the placeholder values with your actual configuration details. Do not commit the `.env` files to version control.
