@@ -7,7 +7,10 @@ const Header = ({ isLoggedIn, onLogout }) => {
       <h1>Gia - AI Integrated Business Management Solution</h1>
       <nav>
         {isLoggedIn ? (
-          <button onClick={onLogout}>Logout</button>
+          <>
+            <Link to="/dashboard">Dashboard</Link>
+            <button onClick={onLogout}>Logout</button>
+          </>
         ) : (
           <>
             <Link to="/login">Login</Link>

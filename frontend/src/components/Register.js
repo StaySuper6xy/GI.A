@@ -28,9 +28,9 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
+    <div className="auth-container">
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="auth-form">
         <div className="form-group">
           <label htmlFor="username">Username</label>
           <input
@@ -64,9 +64,9 @@ const Register = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-btn">Register</button>
+        <button type="submit" className="auth-button">Register</button>
       </form>
-      <p>
+      <p className="auth-link">
         Already have an account? <Link to="/login">Login here</Link>
       </p>
     </div>

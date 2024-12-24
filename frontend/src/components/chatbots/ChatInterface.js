@@ -8,7 +8,6 @@ const ChatInterface = ({ botName, botRole }) => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    // Add user message
     const userMessage = { role: 'user', content: input };
     setMessages([...messages, userMessage]);
 

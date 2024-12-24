@@ -1,6 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import MainDashboard from './MainDashboard';
+import AppDashboard from './AppDashboard';
+import FinanceDashboard from './finance/FinanceDashboard';
 import Filly from './chatbots/Filly';
 import Marcus from './chatbots/Marcus';
 import Sally from './chatbots/Sally';
@@ -12,14 +15,31 @@ const Dashboard = () => {
       <Sidebar />
       <main className="dashboard-main">
         <Routes>
-          <Route path="/" element={<div className="welcome-message">
-            <h2>Welcome to Your AI-Powered Dashboard</h2>
-            <p>Select an AI assistant from the sidebar to get started</p>
-          </div>} />
-          <Route path="/filly" element={<Filly />} />
-          <Route path="/marcus" element={<Marcus />} />
-          <Route path="/sally" element={<Sally />} />
-          <Route path="/dan" element={<Dan />} />
+          <Route path="/" element={<MainDashboard />} />
+          <Route path="/finance" element={
+            <AppDashboard 
+              dashboard={<FinanceDashboard />}
+              chatbot={<Filly />}
+            />
+          } />
+          <Route path="/marketing" element={
+            <AppDashboard 
+              dashboard={<div>Marketing Dashboard (To be implemented)</div>}
+              chatbot={<Marcus />}
+            />
+          } />
+          <Route path="/sales" element={
+            <AppDashboard 
+              dashboard={<div>Sales Dashboard (To be implemented)</div>}
+              chatbot={<Sally />}
+            />
+          } />
+          <Route path="/data" element={
+            <AppDashboard 
+              dashboard={<div>Data Reports Dashboard (To be implemented)</div>}
+              chatbot={<Dan />}
+            />
+          } />
         </Routes>
       </main>
     </div>

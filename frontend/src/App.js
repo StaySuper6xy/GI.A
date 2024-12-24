@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {!isLoggedIn && <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />}
+        <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
         <main className="App-main">
           <Routes>
             <Route path="/" element={isLoggedIn ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />

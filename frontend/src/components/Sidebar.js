@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { DollarSign, TrendingUp, ShoppingCart, BarChart2 } from 'lucide-react';
+import { DollarSign, TrendingUp, ShoppingCart, BarChart2, Home } from 'lucide-react';
 
 const Sidebar = () => {
   const location = useLocation();
@@ -12,35 +12,42 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-content">
-        <h2 className="sidebar-title">AI Assistants</h2>
+        <h2 className="sidebar-title">Gia Dashboard</h2>
         <nav className="sidebar-nav">
           <Link 
-            to="/dashboard/filly" 
-            className={`sidebar-link ${isActive('/dashboard/filly') ? 'active' : ''}`}
+            to="/dashboard" 
+            className={`sidebar-link ${isActive('/dashboard') ? 'active' : ''}`}
+          >
+            <Home size={20} />
+            <span>Main Dashboard</span>
+          </Link>
+          <Link 
+            to="/dashboard/finance" 
+            className={`sidebar-link ${isActive('/dashboard/finance') ? 'active' : ''}`}
           >
             <DollarSign size={20} />
-            <span>Filly - Finance</span>
+            <span>Finance</span>
           </Link>
           <Link 
-            to="/dashboard/marcus" 
-            className={`sidebar-link ${isActive('/dashboard/marcus') ? 'active' : ''}`}
+            to="/dashboard/marketing" 
+            className={`sidebar-link ${isActive('/dashboard/marketing') ? 'active' : ''}`}
           >
             <TrendingUp size={20} />
-            <span>Marcus - Marketing</span>
+            <span>Marketing</span>
           </Link>
           <Link 
-            to="/dashboard/sally" 
-            className={`sidebar-link ${isActive('/dashboard/sally') ? 'active' : ''}`}
+            to="/dashboard/sales" 
+            className={`sidebar-link ${isActive('/dashboard/sales') ? 'active' : ''}`}
           >
             <ShoppingCart size={20} />
-            <span>Sally - Sales</span>
+            <span>Sales</span>
           </Link>
           <Link 
-            to="/dashboard/dan" 
-            className={`sidebar-link ${isActive('/dashboard/dan') ? 'active' : ''}`}
+            to="/dashboard/data" 
+            className={`sidebar-link ${isActive('/dashboard/data') ? 'active' : ''}`}
           >
             <BarChart2 size={20} />
-            <span>Dan - Data Reports</span>
+            <span>Data Reports</span>
           </Link>
         </nav>
       </div>
