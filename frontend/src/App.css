@@ -173,6 +173,44 @@ body {
   margin-left: 250px; /* Account for the sidebar */
 }
 
+.app-dashboard-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* App Dashboard Layout */
+.app-dashboard-wrapper {
+  position: fixed;
+  top: 60px; /* Header height */
+  left: 250px; /* Sidebar width */
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.app-dashboard-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.chatbot-sidebar {
+  width: 320px;
+  min-width: 320px;
+  height: 100%;
+  border-right: 1px solid var(--color-accent-light);
+  background-color: white;
+}
+
+.main-content {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--color-background);
+}
+
+
 .chat-interface-container {
   width: 300px;
   min-width: 300px;
@@ -183,9 +221,10 @@ body {
 }
 
 .dashboard-content-container {
-  flex-grow: 1;
+  flex: 1;
   overflow-y: auto;
-  padding: 2rem;
+  padding: 1.5rem;
+  background-color: var(--color-background);
 }
 
 /* Chat Interface Styles */
@@ -193,120 +232,143 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: white;
+  border-radius: 0;
 }
 
 .chat-header {
   padding: 1rem;
   background-color: var(--color-primary);
-  color: var(--color-text);
+  border-bottom: 1px solid var(--color-accent-light);
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.chat-header p {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 .chat-messages {
-  flex-grow: 1;
-  padding: 1rem;
+  flex: 1;
   overflow-y: auto;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
+  background-color: var(--color-background);
 }
 
 .message {
   padding: 0.75rem 1rem;
-  border-radius: 8px;
-  max-width: 80%;
+  border-radius: 12px;
+  max-width: 85%;
+  line-height: 1.4;
 }
 
 .message.user {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
+  background-color: var(--color-primary);
   align-self: flex-end;
+  border-bottom-right-radius: 4px;
 }
 
 .message.assistant {
-  background-color: var(--color-accent);
-  color: var(--color-text-light);
+  background-color: white;
   align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .chat-input-form {
-  display: flex;
   padding: 1rem;
-  border-top: 1px solid var(--color-accent);
+  background-color: white;
+  border-top: 1px solid var(--color-accent-light);
+  display: flex;
+  gap: 0.5rem;
 }
 
 .chat-input {
-  flex-grow: 1;
-  padding: 0.75rem;
-  border: 1px solid var(--color-accent);
-  border-radius: 4px 0 0 4px;
-  font-size: 1rem;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-accent-light);
+  border-radius: 20px;
+  font-size: 0.95rem;
+  background-color: var(--color-background);
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(86, 3, 173, 0.1);
 }
 
 .chat-submit {
-  padding: 0.75rem 1rem;
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  border: 1px solid var(--color-accent);
-  border-left: none;
-  border-radius: 0 4px 4px 0;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
   font-weight: 500;
-  transition: background-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .chat-submit:hover {
-  background-color: var(--color-accent);
-  color: var(--color-text-light);
+  background-color: var(--color-accent-light);
 }
 
 /* Finance Dashboard Styles */
 .finance-dashboard {
+  padding: 1.5rem;
   height: 100%;
   overflow-y: auto;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
 }
 
 .finance-dashboard h2 {
   color: var(--color-accent);
   margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .account-overview {
-  background-color: var(--color-secondary);
-  padding: 1rem;
+  background-color: white;
+  padding: 1.5rem;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .finance-actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
 .finance-action-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background-color: white;
+  padding: 1.5rem;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   text-decoration: none;
+  color: var(--color-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
 }
 
 .finance-action-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   background-color: var(--color-accent);
-  color: var(--color-text-light);
-  transform: translateY(-5px);
+  color: white;
 }
 
 .finance-action-link svg {
-  margin-bottom: 0.5rem;
   width: 24px;
   height: 24px;
 }

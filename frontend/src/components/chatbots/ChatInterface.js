@@ -12,7 +12,10 @@ const ChatInterface = ({ botName, botRole }) => {
     setMessages([...messages, userMessage]);
 
     // TODO: Implement AI response logic here
-    const botMessage = { role: 'assistant', content: `Hello! I'm ${botName}, your ${botRole} assistant. This is a placeholder response.` };
+    const botMessage = { 
+      role: 'assistant', 
+      content: `Hello! I'm ${botName}, your ${botRole} assistant. This is a placeholder response.` 
+    };
     setMessages(prev => [...prev, botMessage]);
     
     setInput('');
@@ -34,14 +37,24 @@ const ChatInterface = ({ botName, botRole }) => {
       </div>
 
       <form onSubmit={handleSubmit} className="chat-input-form">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder={`Ask ${botName} something...`}
-          className="chat-input"
-        />
-        <button type="submit" className="chat-submit">Send</button>
+        <div className="chat-input-wrapper">
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder={`Ask ${botName} something...`}
+            className="chat-input"
+            rows={1}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleSubmit(e);
+              }
+            }}
+          />
+          <button type="submit" className="chat-submit">
+            Send
+          </button>
+        </div>
       </form>
     </div>
   );
