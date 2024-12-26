@@ -57,6 +57,6 @@ Gia is an all-in-one AI-integrated business management solution built with Node.
 
 ### Frontend
 
-- `REACT_APP_API_URL`: The URL of your backend API (default: http://localhost:5000)
+- None necessary for now
 
 Make sure to replace the placeholder values with your actual configuration details. Do not commit the `.env` files to version control.
